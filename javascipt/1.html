@@ -1,0 +1,63 @@
+<!-- WAP to check the contents when if entered in the form is in lower case then convert it into uppercase. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+       
+           function myFunction()
+        {
+        var username = document.getElementById("username2").value;
+
+        if (username === username.toLowerCase()) {
+          var uppercasetext = username.toUpperCase();
+          alert("Output : "+ uppercasetext);
+        }
+    }
+      function afterclick() {
+        var username = document.getElementById("username2").value;
+        var pass = document.getElementById("password2").value;
+
+        if (username === "" && pass === "") {
+          alert("Username and Password is required");
+        }
+        else if (username === "") {
+          alert("Username is required");
+        }
+        else if (pass === "") {
+          alert("Password is required");
+        } 
+        else  if (pass.length < 8) {
+            alert("Password should be greater or equal to 8");
+        }
+        else {
+           myFunction();
+          console.log("Username :", username);
+          console.log("Password :", pass);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <label for="username"
+      >Username
+      <input type="text" name="username1" id="username2" required />
+      <br />
+      <br />
+    </label>
+
+    <label for="password"
+      >Password
+      <input
+        type="password"  name="password1" id="password2" required
+        minlength="8"
+      />
+    </label>
+    <br />
+    <br />
+    <button type="button" onclick="afterclick()" >Submit</button>
+  </body>
+</html>
