@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="/Lab Work/Javascript/style.css">
+    <script>
+        function validateForm() {
+            var name = document.getElementById("uname").value;
+            var email = document.getElementById("Email").value;
+            var sex = document.querySelector('input[name="sex"]:checked');
+            var dob = document.getElementById("DOB").value;
+            if (name.trim() === "") {
+                alert("Please enter your name.");
+                return false; 
+            }
+            if (email.trim() === "" || email.indexOf("@") === -1) {
+                alert("Please enter a valid email ID.");
+                return false; 
+            }
+            if (!sex) {
+                alert("Please indicate your sex.");
+                return false; 
+            }
+            if (dob === "") {
+                alert("Please enter your date of birth.");
+                return false; 
+            }
+            return true; 
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <font color="green">
+            <div class="bigbox">
+        <font face="Cursive" size="5" color="green">
+            <p>Silicon Chip Technologies</p>
+        </font>
+        <font face="Serif" size="5" color="green">
+            <h2>Pen Pal Information</h2>
+        </font>
+            
+        <form name="penpalform" action="" onsubmit="return validateForm()">
+           
+                <label for="username">Please Enter your name</label>
+                <br>
+                <input type="text" name="username" id="uname" size="30">
+                <br><br>
+        
+                <label for="email">Please Enter your E-Mail Address</label>
+                <br>
+                <input type="email" name="email" id="Email" size="30">
+                <br><br>
+        
+                <label for="Sex">Please indicate your Sex</label>
+                <br>
+                <input type="radio" name="sex" id="Male" value="Male">
+                <label for="Male">Male</label>
+                <input type="radio" name="sex" id="Female" value="Female">
+                <label for="Female">Female</label>
+        
+                <br><br>
+        
+                <label for="date">Please enter your DOB as DD/MM/YYYY</label>
+                <br>
+                <input type="date" name="DOB" id="DOB">
+                <br><br>
+                
+                <label for="Text-Box">Tell us about hobbies and interest in the 'Text-Box' below. <br> We'll keep your Penpal info posted for <b>One Year</b> from today</label>
+                <br>
+                <textarea name="textarea" id="textarea" cols="60" rows="5"></textarea><br><br>
+                <label for="products">Can we contact you with information about our products or services?</label><br>
+                <input type="radio" name="products" id="yes" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" name="products" id="no" value="no">
+                <label for="no">No. Thanks!</label>
+                <br><br>
+                
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+                <input type="button" value="Abort">
+                <br>
+                <p><b>Thank You For Stopping By Our Web Site</b></p>
+            </font>
+        </form>
+      </div>
+    </center>
+</body>
+</html>
